@@ -4,19 +4,13 @@
   flex-direction: column;
   background-color: green;
   color: white;
-
   transition: 0.5s all ease;
+  position: sticky;
+  top: 0;
 
   &.active {
     background-color: white;
     color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-
-
   }
   .container {
     width: 1400px;

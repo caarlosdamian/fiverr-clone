@@ -4,6 +4,11 @@ import "./Navbar.scss";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [currentUser, setcurrentUser] = useState({
+    id: 1,
+    username: "John",
+    isSeller: true,
+  });
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -11,7 +16,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", isActive);
-    console.log('enter')
+    console.log("enter");
     return () => {
       window.removeEventListener("scroll", isActive);
     };
