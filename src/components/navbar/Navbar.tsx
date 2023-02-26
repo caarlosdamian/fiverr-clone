@@ -4,6 +4,7 @@ import "./Navbar.scss";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [open, setOpen] = useState(false);
   const [currentUser, setcurrentUser] = useState({
     id: 1,
     username: "John",
@@ -36,8 +37,31 @@ export const Navbar = () => {
           <span>Explore</span>
           <span>English</span>
           <span>Sing in</span>
-          <span>Become a Seller</span>
-          <button>Join</button>
+          {!currentUser.isSeller && <span>Become a Seller</span>}
+          {currentUser && <button>Join</button>}
+          {currentUser && (
+            <div className="user" onClick={() => setOpen(!open)}>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png"
+                alt="logo"
+              />
+              <span>{currentUser?.username}</span>
+
+              {open && (
+                <div className="options">
+                  {currentUser.isSeller && (
+                    <>
+                      <span>Gigs</span>
+                      <span>Add new Gig</span>
+                    </>
+                  )}
+                  <span>Order</span>
+                  <span>Messages</span>
+                  <span>Logout</span>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
       {active && (
