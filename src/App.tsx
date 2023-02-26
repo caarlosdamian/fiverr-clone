@@ -1,11 +1,7 @@
-import { Navbar } from "./components/navbar/Navbar";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import './App.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-    </div>
-  );
-}
-
-export default App;
+export const App = () => {
+  return <RouterProvider router={router} />;
+};
