@@ -4,7 +4,7 @@ import "./GigCard.scss";
 
 export const GigCard = ({ item }: any) => {
   return (
-    <Link to="/">
+    <Link to="/" className="link">
       <div className="gigCard">
         <img src={item.img} alt="" />
         <div className="info">
